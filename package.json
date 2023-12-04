@@ -14,8 +14,10 @@
     "package.json"
   ],
   "scripts": {
+    "prepare": "if [ -z \"$CI\" ]; then ./scripts/repo/prepare.sh; fi",
     "build": "rollup -c --bundleConfigAsCjs",
     "ci": "yarn --frozen-lock",
+    "commit": "cz",
     "deploy": "yarn build && yarn publish",
     "format:audit": "prettier --check .",
     "format:fix": "prettier --write .",
@@ -31,6 +33,9 @@
     "test:threshold": "jest --coverage"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.2.4",
+    "@commitlint/config-conventional": "^16.2.4",
+    "@commitlint/cz-commitlint": "^17.0.3",
     "@rollup/plugin-commonjs": "^25.0.4",
     "@types/jest": "^29.5.4",
     "@types/node": "^20.5.6",
