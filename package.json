@@ -2,10 +2,16 @@
   "name": "@acelera/ts-array",
   "version": "1.0.0",
   "description": "Utility tool to manage and play with arrays",
-  "repository": "git@github.com:aceleracloud/ts-array.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/aceleracloud/ts-array.git"
+  },
   "author": "Marcus Yoda <marcus@acelera.cloud>",
   "license": "UNLICENSED",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",
